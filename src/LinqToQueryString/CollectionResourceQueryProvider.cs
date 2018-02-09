@@ -3,30 +3,33 @@ using System.Linq.Expressions;
 
 namespace LinqToQueryString
 {
-    internal class CollectionResourceQueryProvider<TResult> : IQueryProvider
+    public class CollectionResourceQueryProvider<TResult> : IQueryProvider
     {
-        public CollectionResourceQueryProvider()
+        private IAsyncExecutor<TResult> executor;
+
+        public CollectionResourceQueryProvider(IAsyncExecutor<TResult> executor)
         {
+            this.executor = executor;
         }
 
         public IQueryable CreateQuery(Expression expression)
         {
-            throw new System.NotImplementedException();
+            return new CollectionResourceQueryable<TResult>(this, expression);
         }
 
-        public IQueryable<TElement> CreateQuery<TElement>(Expression expression)
+        public IQueryable<T> CreateQuery<T>(Expression expression)
         {
-            throw new System.NotImplementedException();
+            return new CollectionResourceQueryable<T>(this, expression);
         }
 
         public object Execute(Expression expression)
         {
-            throw new System.NotImplementedException();
+            return new SyncScalarExecutor<TResult>(executor, expression).Execute();
         }
 
-        public TResult1 Execute<TResult1>(Expression expression)
+        public T Execute<T>(Expression expression)
         {
-            throw new System.NotImplementedException();
+            return (T) new SyncScalarExecutor<TResult>(executor, expression).Execute();
         }
     }
 }

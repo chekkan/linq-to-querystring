@@ -11,7 +11,23 @@ namespace LinqToQueryString
         public CollectionResourceQueryable()
         {
             Expression = Expression.Constant(this);
-            Provider = new CollectionResourceQueryProvider<TData>();
+            var executor = new CollectionResourceExecutor<TData>(Expression);
+            Provider = new CollectionResourceQueryProvider<TData>(executor);
+        }
+
+        /// <summary> 
+        /// This constructor is called by Provider.CreateQuery(). 
+        /// </summary> 
+        /// <param name="expression"></param>
+        public CollectionResourceQueryable(IQueryProvider provider, Expression expression)
+        {
+            Provider = provider ?? throw new ArgumentNullException(nameof(provider));
+            Expression = expression ?? throw new ArgumentNullException(nameof(expression));
+
+            if (!typeof(IQueryable<TData>).IsAssignableFrom(expression.Type))
+            {
+                throw new ArgumentOutOfRangeException(nameof(expression));
+            }
         }
 
         public Type ElementType
