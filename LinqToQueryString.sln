@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1D185A47
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToQueryString.Tests", "tests\LinqToQueryString.Tests\LinqToQueryString.Tests.csproj", "{BADDE493-7CA5-4252-AB9D-100184D564BA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{0EE5D151-A0C8-47BF-8EDF-39D2EBC5292D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToQueryString.Elasticsearch", "samples\LinqToQueryString.Elasticsearch\LinqToQueryString.Elasticsearch.csproj", "{37216A04-EC8F-41CB-B971-024E80D7EE9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,9 +52,22 @@ Global
 		{BADDE493-7CA5-4252-AB9D-100184D564BA}.Release|x64.Build.0 = Release|x64
 		{BADDE493-7CA5-4252-AB9D-100184D564BA}.Release|x86.ActiveCfg = Release|x86
 		{BADDE493-7CA5-4252-AB9D-100184D564BA}.Release|x86.Build.0 = Release|x86
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Debug|x64.ActiveCfg = Debug|x64
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Debug|x64.Build.0 = Debug|x64
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Debug|x86.ActiveCfg = Debug|x86
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Debug|x86.Build.0 = Debug|x86
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Release|x64.ActiveCfg = Release|x64
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Release|x64.Build.0 = Release|x64
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Release|x86.ActiveCfg = Release|x86
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{86906DF2-2E30-477E-81F8-12C1926228DB} = {782E1593-05BE-4BE6-9B8D-3BBD4C877388}
 		{BADDE493-7CA5-4252-AB9D-100184D564BA} = {1D185A47-52E5-4E12-A523-548753627413}
+		{37216A04-EC8F-41CB-B971-024E80D7EE9D} = {0EE5D151-A0C8-47BF-8EDF-39D2EBC5292D}
 	EndGlobalSection
 EndGlobal
